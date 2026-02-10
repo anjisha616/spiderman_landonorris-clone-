@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Spider-Man - Friendly Neighborhood Hero. Official website showcasing the world's most iconic web-slinging superhero.">
+    <title>SPIDER-MAN | Friendly Neighborhood Hero</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts - Premium Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- ============================================
+         NAVIGATION - Transparent to solid on scroll
+    ============================================= -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <!-- Logo -->
+            <a href="#hero" class="nav-logo">
+                <span class="logo-text">SPIDER<span class="logo-accent">-MAN</span></span>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#hero" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#powers" class="nav-link">Powers</a></li>
+                <li><a href="#suits" class="nav-link">Suits</a></li>
+                <li><a href="#missions" class="nav-link">Missions</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#contact" class="nav-link nav-cta">Contact</a></li>
+            </ul>
+
+            <!-- Mobile Hamburger Menu -->
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-nav-links">
+            <li><a href="#hero" class="mobile-nav-link">Home</a></li>
+            <li><a href="#about" class="mobile-nav-link">About</a></li>
+            <li><a href="#powers" class="mobile-nav-link">Powers</a></li>
+            <li><a href="#suits" class="mobile-nav-link">Suits</a></li>
+            <li><a href="#missions" class="mobile-nav-link">Missions</a></li>
+            <li><a href="#gallery" class="mobile-nav-link">Gallery</a></li>
+            <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- ============================================
+         HERO SECTION - Cinematic mask reveal
+    ============================================= -->
+    <section class="hero" id="hero">
+        <!-- Background Elements -->
+        <div class="hero-bg">
+            <div class="hero-gradient"></div>
+            <div class="hero-particles" id="heroParticles"></div>
+            <div class="hero-web-pattern"></div>
+        </div>
+
+        <div class="hero-container">
+            <!-- Hero Text Content -->
+            <div class="hero-content">
+                <div class="hero-subtitle reveal-text">
+                    <span class="line"></span>
+                    <span>NEW YORK'S PROTECTOR</span>
+                </div>
+                <h1 class="hero-title">
+                    <span class="title-line reveal-text" data-delay="1">Friendly</span>
+                    <span class="title-line reveal-text" data-delay="2">Neighborhood</span>
+                    <span class="title-line title-accent reveal-text" data-delay="3">Hero</span>
+                </h1>
+                <p class="hero-description reveal-text" data-delay="4">
+                    With great power comes great responsibility. Protecting the city, 
+                    one web-swing at a time.
+                </p>
+                <div class="hero-buttons reveal-text" data-delay="5">
+                    <a href="#about" class="btn btn-primary">
+                        <span>Explore</span>
+                        <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                    <a href="#missions" class="btn btn-secondary">
+                        <span>Missions</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hero Image - MASK REVEAL EFFECT -->
+            <div class="hero-image-wrapper" id="heroImageWrapper">
+                <!-- Glow effect behind image -->
+                <div class="hero-image-glow"></div>
+                
+                <!-- Image container with parallax tilt -->
+                <div class="hero-image-container" id="heroImageContainer">
+                    <!-- Peter Parker - Base image -->
+                    <div class="hero-image peter-parker" id="peterParker">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=800&fit=crop&crop=face" 
+                             alt="Peter Parker" 
+                             class="hero-img">
+                        <!-- Fallback gradient overlay for demo -->
+                        <div class="image-placeholder peter">
+                            <div class="placeholder-face">
+                                <span class="placeholder-text">PETER PARKER</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Spider-Man Mask - Reveal on hover -->
+                    <div class="hero-image spiderman-mask" id="spidermanMask">
+                        <img src="https://images.unsplash.com/photo-1635805737707-575885ab0820?w=600&h=800&fit=crop" 
+                             alt="Spider-Man Mask" 
+                             class="hero-img">
+                        <!-- Fallback gradient overlay for demo -->
+                        <div class="image-placeholder spiderman">
+                            <div class="placeholder-mask">
+                                <div class="mask-eye left"></div>
+                                <div class="mask-eye right"></div>
+                                <div class="web-lines"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Light sweep effect -->
+                    <div class="light-sweep"></div>
+                </div>
+
+                <!-- Hover instruction -->
+                <div class="hover-hint" id="hoverHint">
+                    <span class="hint-icon">◉</span>
+                    <span class="hint-text">Hover to reveal</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span class="scroll-text">Scroll to explore</span>
+        </div>
+    </section>
+
+    <!-- ============================================
+         ABOUT SECTION - Athlete profile style
+    ============================================= -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <!-- Stats Column -->
+                <div class="about-stats scroll-reveal">
+                    <div class="stat-card">
+                        <span class="stat-number" data-count="15">0</span>
+                        <span class="stat-label">Years Active</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" data-count="2847">0</span>
+                        <span class="stat-label">Missions Completed</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" data-count="99">0</span>
+                        <span class="stat-suffix">%</span>
+                        <span class="stat-label">Success Rate</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" data-count="12">0</span>
+                        <span class="stat-label">Suit Variants</span>
+                    </div>
+                </div>
+
+                <!-- Bio Content -->
+                <div class="about-content scroll-reveal">
+                    <div class="section-label">
+                        <span class="label-line"></span>
+                        <span>The Man Behind The Mask</span>
+                    </div>
+                    <h2 class="section-title">Peter Benjamin<br><span class="title-accent">Parker</span></h2>
+                    <div class="about-bio">
+                        <p class="bio-lead">
+                            A brilliant scientific mind transformed by extraordinary circumstances into 
+                            New York City's most trusted guardian.
+                        </p>
+                        <p>
+                            Bitten by a genetically-modified spider during a high school field trip, 
+                            Peter Parker gained superhuman abilities that would reshape his destiny. 
+                            What began as a personal tragedy became the catalyst for an unwavering 
+                            commitment to protecting the innocent.
+                        </p>
+                        <p>
+                            By day, a gifted scientist and photographer. By night, the vigilant 
+                            protector who swings through Manhattan's concrete canyons. His genius-level 
+                            intellect rivals his physical prowess, creating cutting-edge technology 
+                            that amplifies his natural abilities.
+                        </p>
+                    </div>
+                    
+                    <!-- Profile Details -->
+                    <div class="profile-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Base</span>
+                            <span class="detail-value">New York City</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Affiliation</span>
+                            <span class="detail-value">Avengers</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Status</span>
+                            <span class="detail-value status-active">Active</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         POWERS & SKILLS SECTION
+    ============================================= -->
+    <section class="powers" id="powers">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <div class="section-label">
+                    <span class="label-line"></span>
+                    <span>Capabilities</span>
+                </div>
+                <h2 class="section-title">Powers &<br><span class="title-accent">Abilities</span></h2>
+            </div>
+
+            <div class="powers-grid">
+                <!-- Power Card 1 -->
+                <div class="power-card scroll-reveal" data-delay="1">
+                    <div class="power-icon">
+                        <svg viewBox="0 0 64 64" fill="none">
+                            <circle cx="32" cy="32" r="28" stroke="currentColor" stroke-width="2"/>
+                            <path d="M32 16v32M16 32h32" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="power-title">Superhuman Strength</h3>
+                    <p class="power-description">
+                        Capable of lifting approximately 10 tons. Enhanced musculature allows 
+                        for extraordinary feats of physical power.
+                    </p>
+                    <div class="power-level">
+                        <div class="level-bar">
+                            <div class="level-fill" data-level="95"></div>
+                        </div>
+                        <span class="level-text">95/100</span>
+                    </div>
+                </div>
+
+                <!-- Power Card 2 -->
+                <div class="power-card scroll-reveal" data-delay="2">
+                    <div class="power-icon">
+                        <svg viewBox="0 0 64 64" fill="none">
+                            <path d="M32 8l8 16 18 3-13 12 3 18-16-9-16 9 3-18-13-12 18-3z" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="power-title">Spider-Sense</h3>
+                    <p class="power-description">
+                        Precognitive danger detection system. Provides split-second awareness 
+                        of incoming threats before they occur.
+                    </p>
+                    <div class="power-level">
+                        <div class="level-bar">
+                            <div class="level-fill" data-level="100"></div>
+                        </div>
+                        <span class="level-text">100/100</span>
+                    </div>
+                </div>
+
+                <!-- Power Card 3 -->
+                <div class="power-card scroll-reveal" data-delay="3">
+                    <div class="power-icon">
+                        <svg viewBox="0 0 64 64" fill="none">
+                            <circle cx="32" cy="20" r="12" stroke="currentColor" stroke-width="2"/>
+                            <path d="M12 56c0-11 9-20 20-20s20 9 20 20" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="power-title">Wall Crawling</h3>
+                    <p class="power-description">
+                        Microscopic setae on hands and feet enable adhesion to virtually 
+                        any surface regardless of orientation.
+                    </p>
+                    <div class="power-level">
+                        <div class="level-bar">
+                            <div class="level-fill" data-level="90"></div>
+                        </div>
+                        <span class="level-text">90/100</span>
+                    </div>
+                </div>
+
+                <!-- Power Card 4 -->
+                <div class="power-card scroll-reveal" data-delay="4">
+                    <div class="power-icon">
+                        <svg viewBox="0 0 64 64" fill="none">
+                            <path d="M8 32h48M32 8v48M14 14l36 36M50 14L14 50" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="power-title">Enhanced Agility</h3>
+                    <p class="power-description">
+                        Superhuman reflexes and coordination. Can perform complex acrobatic 
+                        maneuvers with perfect precision.
+                    </p>
+                    <div class="power-level">
+                        <div class="level-bar">
+                            <div class="level-fill" data-level="98"></div>
+                        </div>
+                        <span class="level-text">98/100</span>
+                    </div>
+                </div>
+
+                <!-- Power Card 5 -->
+                <div class="power-card scroll-reveal" data-delay="5">
+                    <div class="power-icon">
+                        <svg viewBox="0 0 64 64" fill="none">
+                            <rect x="12" y="12" width="40" height="40" rx="4" stroke="currentColor" stroke-width="2"/>
+                            <path d="M24 32h16M32 24v16" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="power-title">Genius Intellect</h3>
+                    <p class="power-description">
+                        Exceptional scientific mind specializing in chemistry, physics, and 
+                        engineering. Creator of advanced web technology.
+                    </p>
+                    <div class="power-level">
+                        <div class="level-bar">
+                            <div class="level-fill" data-level="92"></div>
+                        </div>
+                        <span class="level-text">92/100</span>
+                    </div>
+                </div>
+
+                <!-- Power Card 6 -->
+                <div class="power-card scroll-reveal" data-delay="6">
+                    <div class="power-icon">
+                        <svg viewBox="0 0 64 64" fill="none">
+                            <path d="M32 8c-13 0-24 11-24 24s24 24 24 24 24-11 24-24-11-24-24-24z" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="32" cy="32" r="8" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="power-title">Web-Shooters</h3>
+                    <p class="power-description">
+                        Self-designed wrist-mounted devices that project synthetic webbing 
+                        with variable tensile strength and patterns.
+                    </p>
+                    <div class="power-level">
+                        <div class="level-bar">
+                            <div class="level-fill" data-level="88"></div>
+                        </div>
+                        <span class="level-text">88/100</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SUITS & TECHNOLOGY SECTION
+    ============================================= -->
+    <section class="suits" id="suits">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <div class="section-label">
+                    <span class="label-line"></span>
+                    <span>Equipment</span>
+                </div>
+                <h2 class="section-title">Suits &<br><span class="title-accent">Technology</span></h2>
+            </div>
+
+            <div class="suits-showcase">
+                <!-- Suit Navigation -->
+                <div class="suits-nav scroll-reveal">
+                    <button class="suit-tab active" data-suit="classic">Classic</button>
+                    <button class="suit-tab" data-suit="iron-spider">Iron Spider</button>
+                    <button class="suit-tab" data-suit="stealth">Stealth</button>
+                    <button class="suit-tab" data-suit="symbiote">Symbiote</button>
+                </div>
+
+                <!-- Suit Display -->
+                <div class="suit-display scroll-reveal">
+                    <!-- Classic Suit -->
+                    <div class="suit-panel active" id="suit-classic">
+                        <div class="suit-image">
+                            <div class="suit-visual classic-suit">
+                                <div class="suit-glow"></div>
+                            </div>
+                        </div>
+                        <div class="suit-info">
+                            <span class="suit-version">MK I</span>
+                            <h3 class="suit-name">Classic Red & Blue</h3>
+                            <p class="suit-description">
+                                The iconic original design. Hand-crafted from specialized fabric 
+                                with integrated web-shooter housings. Represents the purest form 
+                                of the Spider-Man legacy.
+                            </p>
+                            <ul class="suit-features">
+                                <li>Enhanced durability fabric</li>
+                                <li>Built-in web-shooter mounts</li>
+                                <li>Flexible eye lenses</li>
+                                <li>Breathable mesh panels</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Iron Spider Suit -->
+                    <div class="suit-panel" id="suit-iron-spider">
+                        <div class="suit-image">
+                            <div class="suit-visual iron-suit">
+                                <div class="suit-glow"></div>
+                            </div>
+                        </div>
+                        <div class="suit-info">
+                            <span class="suit-version">MK II</span>
+                            <h3 class="suit-name">Iron Spider Armor</h3>
+                            <p class="suit-description">
+                                Stark Industries nanotechnology marvel. Features instant deployment, 
+                                enhanced protection, and the signature waldoes - four articulated 
+                                spider-arms for combat and utility.
+                            </p>
+                            <ul class="suit-features">
+                                <li>Nanotechnology construction</li>
+                                <li>Four mechanical waldoes</li>
+                                <li>Instant kill mode</li>
+                                <li>Space-capable systems</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Stealth Suit -->
+                    <div class="suit-panel" id="suit-stealth">
+                        <div class="suit-image">
+                            <div class="suit-visual stealth-suit">
+                                <div class="suit-glow"></div>
+                            </div>
+                        </div>
+                        <div class="suit-info">
+                            <span class="suit-version">MK III</span>
+                            <h3 class="suit-name">Night Monkey Stealth</h3>
+                            <p class="suit-description">
+                                S.H.I.E.L.D. engineered tactical suit designed for covert operations. 
+                                Matte black finish with enhanced night-vision capabilities and 
+                                sound-dampening technology.
+                            </p>
+                            <ul class="suit-features">
+                                <li>Radar invisibility</li>
+                                <li>Night vision optics</li>
+                                <li>Sound dampening</li>
+                                <li>Tactical gear integration</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Symbiote Suit -->
+                    <div class="suit-panel" id="suit-symbiote">
+                        <div class="suit-image">
+                            <div class="suit-visual symbiote-suit">
+                                <div class="suit-glow"></div>
+                            </div>
+                        </div>
+                        <div class="suit-info">
+                            <span class="suit-version">ALIEN</span>
+                            <h3 class="suit-name">Symbiote Black Suit</h3>
+                            <p class="suit-description">
+                                Alien symbiote organism that bonds at the molecular level. Provides 
+                                unlimited webbing, enhanced strength, and adaptive camouflage at 
+                                the cost of aggressive impulses.
+                            </p>
+                            <ul class="suit-features">
+                                <li>Unlimited organic webbing</li>
+                                <li>Strength amplification</li>
+                                <li>Shape-shifting capability</li>
+                                <li>Regenerative healing</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         MISSION HISTORY SECTION
+    ============================================= -->
+    <section class="missions" id="missions">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <div class="section-label">
+                    <span class="label-line"></span>
+                    <span>Battle Record</span>
+                </div>
+                <h2 class="section-title">Mission<br><span class="title-accent">History</span></h2>
+            </div>
+
+            <div class="missions-timeline">
+                <!-- Mission 1 -->
+                <div class="mission-item scroll-reveal">
+                    <div class="mission-date">
+                        <span class="date-year">2024</span>
+                        <span class="date-month">DEC</span>
+                    </div>
+                    <div class="mission-content">
+                        <span class="mission-status completed">Completed</span>
+                        <h3 class="mission-title">The Sinister Six Convergence</h3>
+                        <p class="mission-description">
+                            Coordinated assault by six of the most dangerous villains. 
+                            Strategic misdirection and divide-and-conquer tactics led to 
+                            successful neutralization of all threats with zero civilian casualties.
+                        </p>
+                        <div class="mission-tags">
+                            <span class="tag">High Priority</span>
+                            <span class="tag">Team-Up</span>
+                            <span class="tag">Manhattan</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mission 2 -->
+                <div class="mission-item scroll-reveal">
+                    <div class="mission-date">
+                        <span class="date-year">2024</span>
+                        <span class="date-month">SEP</span>
+                    </div>
+                    <div class="mission-content">
+                        <span class="mission-status completed">Completed</span>
+                        <h3 class="mission-title">Multiverse Incursion Response</h3>
+                        <p class="mission-description">
+                            Dimensional breach in Times Square released hostile variants. 
+                            Collaborated with alternate Spider-People to stabilize reality 
+                            and return displaced individuals to their home dimensions.
+                        </p>
+                        <div class="mission-tags">
+                            <span class="tag">Critical</span>
+                            <span class="tag">Multiverse</span>
+                            <span class="tag">Avengers</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mission 3 -->
+                <div class="mission-item scroll-reveal">
+                    <div class="mission-date">
+                        <span class="date-year">2024</span>
+                        <span class="date-month">JUN</span>
+                    </div>
+                    <div class="mission-content">
+                        <span class="mission-status completed">Completed</span>
+                        <h3 class="mission-title">Oscorp Bio-Weapon Containment</h3>
+                        <p class="mission-description">
+                            Prevented release of experimental pathogen from compromised 
+                            Oscorp facility. Required infiltration, science team extraction, 
+                            and controlled demolition of contaminated sections.
+                        </p>
+                        <div class="mission-tags">
+                            <span class="tag">Covert</span>
+                            <span class="tag">Bio-Hazard</span>
+                            <span class="tag">Solo</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mission 4 -->
+                <div class="mission-item scroll-reveal">
+                    <div class="mission-date">
+                        <span class="date-year">2024</span>
+                        <span class="date-month">MAR</span>
+                    </div>
+                    <div class="mission-content">
+                        <span class="mission-status completed">Completed</span>
+                        <h3 class="mission-title">Vulture Air Superiority Crisis</h3>
+                        <p class="mission-description">
+                            High-altitude pursuit across five boroughs. Disabled advanced 
+                            flight tech and recovered stolen Stark Industries cargo. 
+                            Established new web-wing gliding techniques during operation.
+                        </p>
+                        <div class="mission-tags">
+                            <span class="tag">Aerial</span>
+                            <span class="tag">Recovery</span>
+                            <span class="tag">Queens</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         GALLERY / MEDIA SECTION
+    ============================================= -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-header scroll-reveal">
+                <div class="section-label">
+                    <span class="label-line"></span>
+                    <span>Media Archive</span>
+                </div>
+                <h2 class="section-title">Photo<br><span class="title-accent">Gallery</span></h2>
+            </div>
+
+            <div class="gallery-grid scroll-reveal">
+                <div class="gallery-item large">
+                    <div class="gallery-image">
+                        <div class="gallery-placeholder" style="--accent: var(--red);">
+                            <span>NYC Skyline Swing</span>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-category">Action</span>
+                        <h4 class="gallery-title">Above The City</h4>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <div class="gallery-placeholder" style="--accent: var(--red-dark);">
+                            <span>Combat Training</span>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-category">Training</span>
+                        <h4 class="gallery-title">Daily Practice</h4>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <div class="gallery-placeholder" style="--accent: #1a1a2e;">
+                            <span>Stealth Mode</span>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-category">Stealth</span>
+                        <h4 class="gallery-title">Night Watch</h4>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <div class="gallery-placeholder" style="--accent: #2d132c;">
+                            <span>Team Assembly</span>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-category">Team</span>
+                        <h4 class="gallery-title">Avengers Mission</h4>
+                    </div>
+                </div>
+
+                <div class="gallery-item tall">
+                    <div class="gallery-image">
+                        <div class="gallery-placeholder" style="--accent: var(--red);">
+                            <span>Portrait Shot</span>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-category">Portrait</span>
+                        <h4 class="gallery-title">The Hero</h4>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <div class="gallery-placeholder" style="--accent: #0d0d0d;">
+                            <span>Lab Work</span>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-category">Science</span>
+                        <h4 class="gallery-title">Web Research</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         CONTACT / CTA SECTION
+    ============================================= -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-wrapper scroll-reveal">
+                <div class="contact-content">
+                    <div class="section-label">
+                        <span class="label-line"></span>
+                        <span>Get In Touch</span>
+                    </div>
+                    <h2 class="section-title">Need A<br><span class="title-accent">Hero?</span></h2>
+                    <p class="contact-description">
+                        Whether it's a city-wide crisis or a neighborhood in need, 
+                        the web-slinger is always ready to answer the call. Report 
+                        suspicious activity or reach out for assistance.
+                    </p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <span class="method-icon">📍</span>
+                            <div class="method-info">
+                                <span class="method-label">Location</span>
+                                <span class="method-value">New York City, NY</span>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <span class="method-icon">📡</span>
+                            <div class="method-info">
+                                <span class="method-label">Response Time</span>
+                                <span class="method-value">&lt; 5 Minutes</span>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <span class="method-icon">🕸️</span>
+                            <div class="method-info">
+                                <span class="method-label">Network</span>
+                                <span class="method-value">Avengers Uplink</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="urgency">Urgency Level</label>
+                            <select id="urgency" name="urgency">
+                                <option value="low">Low - General Inquiry</option>
+                                <option value="medium">Medium - Needs Attention</option>
+                                <option value="high">High - Time Sensitive</option>
+                                <option value="critical">Critical - Emergency</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Describe the situation..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <span>Send Signal</span>
+                            <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+    ============================================= -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="footer-logo">SPIDER<span class="logo-accent">-MAN</span></span>
+                    <p class="footer-tagline">With great power comes great responsibility.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Navigate</h4>
+                        <a href="#hero">Home</a>
+                        <a href="#about">About</a>
+                        <a href="#powers">Powers</a>
+                        <a href="#suits">Suits</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>More</h4>
+                        <a href="#missions">Missions</a>
+                        <a href="#gallery">Gallery</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Connect</h4>
+                        <a href="#">Daily Bugle</a>
+                        <a href="#">Avengers HQ</a>
+                        <a href="#">S.H.I.E.L.D.</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Spider-Man. All rights reserved. Not affiliated with any actual vigilante activities.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
