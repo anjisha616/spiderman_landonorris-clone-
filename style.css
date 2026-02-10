@@ -602,7 +602,7 @@ ul {
 .hero-image-container {
     position: relative;
     width: 100%;
-    max-width: 700px;
+    max-width: 900px;
     height: 95vh;
     transform-style: preserve-3d;
     perspective: 1000px;
