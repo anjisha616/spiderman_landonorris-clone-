@@ -623,168 +623,21 @@ ul {
     transition: filter 0.6s var(--ease-out);
 }
 
-/* Actual image styling for hero section */
-.hero-actual-image {
+/* ===================
+   ANJI IMAGE STYLING (Base image - anji.png)
+   =================== */
+.peter-parker .hero-actual-image {
     width: 100%;
     height: 100%;
     object-fit: contain;
     object-position: center bottom;
+    /* Anji image at full size */
+    transform: scale(1);
+    transform-origin: center bottom;
 }
-
-/* CSS-only Peter Parker placeholder */
-.image-placeholder.peter {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    background: transparent;
-}
-
-/* Body/Shoulders */
-.placeholder-body {
-    position: absolute;
-    bottom: 0;
-    width: 90%;
-    height: 45%;
-    background: linear-gradient(180deg, 
-        #2a2a2a 0%, 
-        #1a1a1a 30%,
-        #0f0f0f 100%);
-    border-radius: 50% 50% 0 0 / 20% 20% 0 0;
-    /* Jacket texture pattern */
-    background-image: 
-        radial-gradient(circle at 30% 20%, rgba(60,60,60,0.5) 0%, transparent 30%),
-        radial-gradient(circle at 70% 30%, rgba(60,60,60,0.4) 0%, transparent 25%),
-        radial-gradient(circle at 50% 60%, rgba(40,40,40,0.3) 0%, transparent 40%),
-        linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 30%, #0f0f0f 100%);
-}
-
-/* Face */
-.placeholder-face {
-    position: absolute;
-    bottom: 38%;
-    width: 200px;
-    height: 260px;
-    background: linear-gradient(180deg, 
-        #d4a574 0%, 
-        #c49a6c 30%,
-        #b8906a 60%,
-        #a88060 100%);
-    border-radius: 50% 50% 45% 45% / 55% 55% 45% 45%;
-    z-index: 2;
-}
-
-.face-features {
-    position: absolute;
-    inset: 0;
-}
-
-/* Eyebrows */
-.eyebrow {
-    position: absolute;
-    width: 50px;
-    height: 8px;
-    background: #3d2b1f;
-    border-radius: 10px;
-    top: 32%;
-}
-
-.eyebrow.left {
-    left: 22%;
-    transform: rotate(-5deg);
-}
-
-.eyebrow.right {
-    right: 22%;
-    transform: rotate(5deg);
-}
-
-/* Eyes */
-.placeholder-face .eye {
-    position: absolute;
-    width: 28px;
-    height: 18px;
-    background: #2d2318;
-    border-radius: 50%;
-    top: 40%;
-}
-
-.placeholder-face .eye.left {
-    left: 28%;
-}
-
-.placeholder-face .eye.right {
-    right: 28%;
-}
-
-.placeholder-face .eye::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 10px;
-    height: 10px;
-    background: #1a1410;
-    border-radius: 50%;
-}
-
-/* Nose */
-.nose {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translateX(-50%);
-    width: 20px;
-    height: 35px;
-    background: linear-gradient(90deg, 
-        transparent 0%, 
-        rgba(0,0,0,0.1) 50%, 
-        transparent 100%);
-    border-radius: 0 0 50% 50%;
-}
-
-/* Mouth */
-.mouth {
-    position: absolute;
-    left: 50%;
-    bottom: 22%;
-    transform: translateX(-50%);
-    width: 50px;
-    height: 8px;
-    background: #8b6b5a;
-    border-radius: 0 0 25px 25px;
-}
-
-/* Hair */
-.placeholder-hair {
-    position: absolute;
-    bottom: 53%;
-    width: 220px;
-    height: 120px;
-    background: #1a1008;
-    border-radius: 50% 50% 30% 30%;
-    z-index: 1;
-    /* Curly hair texture */
-    background-image: 
-        radial-gradient(circle at 20% 80%, #2d1f15 10%, transparent 12%),
-        radial-gradient(circle at 40% 70%, #2d1f15 8%, transparent 10%),
-        radial-gradient(circle at 60% 75%, #2d1f15 9%, transparent 11%),
-        radial-gradient(circle at 80% 80%, #2d1f15 10%, transparent 12%),
-        radial-gradient(circle at 30% 50%, #2d1f15 12%, transparent 14%),
-        radial-gradient(circle at 70% 55%, #2d1f15 11%, transparent 13%),
-        radial-gradient(circle at 50% 40%, #2d1f15 10%, transparent 12%),
-        radial-gradient(circle at 25% 30%, #2d1f15 8%, transparent 10%),
-        radial-gradient(circle at 75% 35%, #2d1f15 9%, transparent 11%),
-        linear-gradient(180deg, #1a1008 0%, #2d1f15 100%);
-}
-
-/* Old mask CSS removed - now using actual spidergirl.png image */
 
 /* ===================
-   HOVER STATE - Reveal Spider-Girl image (like Lando's helmet)
+   SPIDER-GIRL IMAGE STYLING (Hover reveal - spidergirl.png)
    =================== */
 .spiderman-mask {
     z-index: 3;
@@ -797,8 +650,14 @@ ul {
     height: 100%;
     object-fit: contain;
     object-position: center bottom;
+    /* Scale down spidergirl to match anji size */
+    transform: scale(0.75);
+    transform-origin: center bottom;
 }
 
+/* ===================
+   HOVER STATE - Reveal Spider-Girl image
+   =================== */
 .hero-image-container:hover .spiderman-mask,
 .hero-image-container.active .spiderman-mask {
     opacity: 1;
