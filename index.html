@@ -56,89 +56,105 @@
     </div>
 
     <!-- ============================================
-         HERO SECTION - Cinematic mask reveal
+         HERO SECTION - Cinematic mask reveal (Lando Style)
     ============================================= -->
     <section class="hero" id="hero">
         <!-- Background Elements -->
         <div class="hero-bg">
             <div class="hero-gradient"></div>
             <div class="hero-particles" id="heroParticles"></div>
-            <div class="hero-web-pattern"></div>
+            <!-- Organic curved background shapes like Lando's site -->
+            <svg class="hero-curves" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+                <path class="curve curve-1" d="M-100,200 Q400,100 600,300 T1000,250 T1400,350 T2000,200" />
+                <path class="curve curve-2" d="M-100,400 Q300,300 500,500 T900,450 T1300,550 T1800,400 T2100,500" />
+                <path class="curve curve-3" d="M-100,700 Q200,600 450,750 T850,700 T1250,800 T1700,700 T2000,750" />
+                <circle class="curve-circle" cx="150" cy="350" r="180" />
+            </svg>
         </div>
 
-        <div class="hero-container">
-            <!-- Hero Text Content -->
-            <div class="hero-content">
-                <div class="hero-subtitle reveal-text">
-                    <span class="line"></span>
-                    <span>NEW YORK'S PROTECTOR</span>
+        <!-- Centered Hero Image - MASK REVEAL EFFECT (Main Focus) -->
+        <div class="hero-image-wrapper" id="heroImageWrapper">
+            <!-- Image container with parallax tilt -->
+            <div class="hero-image-container" id="heroImageContainer">
+                <!-- Peter Parker - Base image -->
+                <div class="hero-image peter-parker" id="peterParker">
+                    <!-- Fallback gradient overlay for demo -->
+                    <div class="image-placeholder peter">
+                        <div class="placeholder-body"></div>
+                        <div class="placeholder-face">
+                            <div class="face-features">
+                                <div class="eyebrow left"></div>
+                                <div class="eyebrow right"></div>
+                                <div class="eye left"></div>
+                                <div class="eye right"></div>
+                                <div class="nose"></div>
+                                <div class="mouth"></div>
+                            </div>
+                        </div>
+                        <div class="placeholder-hair"></div>
+                    </div>
                 </div>
-                <h1 class="hero-title">
-                    <span class="title-line reveal-text" data-delay="1">Friendly</span>
-                    <span class="title-line reveal-text" data-delay="2">Neighborhood</span>
-                    <span class="title-line title-accent reveal-text" data-delay="3">Hero</span>
-                </h1>
-                <p class="hero-description reveal-text" data-delay="4">
-                    With great power comes great responsibility. Protecting the city, 
-                    one web-swing at a time.
-                </p>
-                <div class="hero-buttons reveal-text" data-delay="5">
-                    <a href="#about" class="btn btn-primary">
-                        <span>Explore</span>
-                        <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                    </a>
-                    <a href="#missions" class="btn btn-secondary">
-                        <span>Missions</span>
-                    </a>
+                
+                <!-- Spider-Man Mask - Reveals on hover (positioned over head like helmet) -->
+                <div class="hero-image spiderman-mask" id="spidermanMask">
+                    <div class="mask-overlay">
+                        <div class="mask-shell">
+                            <div class="mask-eye left"></div>
+                            <div class="mask-eye right"></div>
+                            <div class="web-pattern"></div>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Light sweep effect -->
+                <div class="light-sweep"></div>
             </div>
 
-            <!-- Hero Image - MASK REVEAL EFFECT -->
-            <div class="hero-image-wrapper" id="heroImageWrapper">
-                <!-- Glow effect behind image -->
-                <div class="hero-image-glow"></div>
-                
-                <!-- Image container with parallax tilt -->
-                <div class="hero-image-container" id="heroImageContainer">
-                    <!-- Peter Parker - Base image -->
-                    <div class="hero-image peter-parker" id="peterParker">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=800&fit=crop&crop=face" 
-                             alt="Peter Parker" 
-                             class="hero-img">
-                        <!-- Fallback gradient overlay for demo -->
-                        <div class="image-placeholder peter">
-                            <div class="placeholder-face">
-                                <span class="placeholder-text">PETER PARKER</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Spider-Man Mask - Reveal on hover -->
-                    <div class="hero-image spiderman-mask" id="spidermanMask">
-                        <img src="https://images.unsplash.com/photo-1635805737707-575885ab0820?w=600&h=800&fit=crop" 
-                             alt="Spider-Man Mask" 
-                             class="hero-img">
-                        <!-- Fallback gradient overlay for demo -->
-                        <div class="image-placeholder spiderman">
-                            <div class="placeholder-mask">
-                                <div class="mask-eye left"></div>
-                                <div class="mask-eye right"></div>
-                                <div class="web-lines"></div>
-                            </div>
-                        </div>
-                    </div>
+            <!-- Hover instruction -->
+            <div class="hover-hint" id="hoverHint">
+                <span class="hint-icon">◉</span>
+                <span class="hint-text">Hover to reveal</span>
+            </div>
+        </div>
 
-                    <!-- Light sweep effect -->
-                    <div class="light-sweep"></div>
-                </div>
+        <!-- Hero Text Content - Positioned to sides -->
+        <div class="hero-content hero-content-left reveal-text">
+            <div class="hero-logo">
+                <span class="logo-icon">🕷</span>
+            </div>
+            <h1 class="hero-title-side">
+                <span class="title-line">SPIDER</span>
+                <span class="title-line title-accent">-MAN</span>
+            </h1>
+        </div>
 
-                <!-- Hover instruction -->
-                <div class="hover-hint" id="hoverHint">
-                    <span class="hint-icon">◉</span>
-                    <span class="hint-text">Hover to reveal</span>
+        <div class="hero-content hero-content-right reveal-text" data-delay="2">
+            <div class="hero-info-card">
+                <span class="info-label">NEXT MISSION</span>
+                <div class="info-icon">🕸️</div>
+                <span class="info-title">NEW YORK</span>
+            </div>
+            <div class="hero-info-card">
+                <div class="info-badge">
+                    <span class="badge-text">AVENGERS</span>
+                    <span class="badge-sub">SINCE 2016</span>
                 </div>
+            </div>
+        </div>
+
+        <!-- Bottom CTA -->
+        <div class="hero-bottom reveal-text" data-delay="3">
+            <p class="hero-tagline">With great power comes great responsibility</p>
+            <div class="hero-buttons">
+                <a href="#about" class="btn btn-primary">
+                    <span>Explore</span>
+                    <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="#missions" class="btn btn-secondary">
+                    <span>Missions</span>
+                </a>
             </div>
         </div>
 
@@ -147,7 +163,7 @@
             <div class="scroll-mouse">
                 <div class="scroll-wheel"></div>
             </div>
-            <span class="scroll-text">Scroll to explore</span>
+            <span class="scroll-text">Scroll</span>
         </div>
     </section>
 
