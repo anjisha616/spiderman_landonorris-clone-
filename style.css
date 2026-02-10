@@ -620,7 +620,7 @@ ul {
 /* Peter Parker - Base layer (full body portrait) */
 .peter-parker {
     z-index: 1;
-    transition: filter 0.6s var(--ease-out);
+    transition: opacity 0.6s var(--ease-out), filter 0.6s var(--ease-out);
 }
 
 /* ===================
@@ -665,7 +665,7 @@ ul {
 
 .hero-image-container:hover .peter-parker,
 .hero-image-container.active .peter-parker {
-    filter: brightness(0.9);
+    opacity: 0;
 }
 
 /* Light sweep effect */
