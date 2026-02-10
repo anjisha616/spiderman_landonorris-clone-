@@ -781,109 +781,32 @@ ul {
         linear-gradient(180deg, #1a1008 0%, #2d1f15 100%);
 }
 
-/* Spider-Gwen Mask - Positioned as hood overlay */
-.spiderman-mask {
-    z-index: 3;
-    pointer-events: none;
-}
-
-.mask-overlay {
-    position: absolute;
-    top: 5%;
-    left: 50%;
-    transform: translateX(-50%) scale(1.1);
-    width: 280px;
-    height: 320px;
-    opacity: 0;
-    transition: all 0.6s var(--ease-out);
-}
-
-/* The actual mask shell - Ghost-Spider white hood */
-.mask-shell {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(145deg, 
-        #ffffff 0%, 
-        #f0f0f0 40%,
-        #e8e8e8 100%);
-    border-radius: 50% 50% 45% 45% / 55% 55% 45% 45%;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 
-        0 0 60px rgba(255, 101, 163, 0.4),
-        inset 0 -20px 40px rgba(0,0,0,0.1),
-        inset 0 20px 40px rgba(255,255,255,0.3);
-}
-
-/* Mask eyes - Ghost-Spider style with pink/cyan glow */
-.mask-shell .mask-eye {
-    position: absolute;
-    background: linear-gradient(135deg, #ffffff 0%, #00D4FF 50%, #FF65A3 100%);
-    box-shadow: 
-        0 0 30px rgba(0, 212, 255, 0.6),
-        0 0 60px rgba(255, 101, 163, 0.4),
-        inset 0 0 20px rgba(255,255,255,0.5);
-    border: 3px solid #1a1a1a;
-}
-
-.mask-shell .mask-eye.left {
-    width: 80px;
-    height: 55px;
-    top: 35%;
-    left: 12%;
-    border-radius: 45% 55% 50% 50% / 60% 60% 40% 40%;
-    transform: rotate(-15deg);
-}
-
-.mask-shell .mask-eye.right {
-    width: 80px;
-    height: 55px;
-    top: 35%;
-    right: 12%;
-    border-radius: 55% 45% 50% 50% / 60% 60% 40% 40%;
-    transform: rotate(15deg);
-}
-
-/* Web pattern on mask - Ghost-Spider style inner hood web */
-.web-pattern {
-    position: absolute;
-    inset: 0;
-    background: 
-        /* Radial lines from center - pink web lines */
-        repeating-conic-gradient(from 0deg at 50% 30%, 
-            transparent 0deg, 
-            transparent 8deg, 
-            rgba(255, 101, 163, 0.2) 8deg, 
-            rgba(255, 101, 163, 0.2) 10deg);
-    border-radius: inherit;
-}
-
-.web-pattern::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    /* Concentric web lines - pink to match Ghost-Spider */
-    background: 
-        radial-gradient(circle at 50% 30%, transparent 20px, rgba(255, 101, 163, 0.15) 21px, transparent 22px),
-        radial-gradient(circle at 50% 30%, transparent 45px, rgba(255, 101, 163, 0.15) 46px, transparent 47px),
-        radial-gradient(circle at 50% 30%, transparent 70px, rgba(255, 101, 163, 0.15) 71px, transparent 72px),
-        radial-gradient(circle at 50% 30%, transparent 95px, rgba(255, 101, 163, 0.15) 96px, transparent 97px),
-        radial-gradient(circle at 50% 30%, transparent 120px, rgba(255, 101, 163, 0.15) 121px, transparent 122px);
-    border-radius: inherit;
-}
+/* Old mask CSS removed - now using actual spidergirl.png image */
 
 /* ===================
-   HOVER STATE - Reveal the mask (like Lando's helmet)
+   HOVER STATE - Reveal Spider-Girl image (like Lando's helmet)
    =================== */
-.hero-image-container:hover .mask-overlay,
-.hero-image-container.active .mask-overlay {
-    opacity: 0.9;
-    transform: translateX(-50%) scale(1) translateY(-10px);
+.spiderman-mask {
+    z-index: 3;
+    opacity: 0;
+    transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
+}
+
+.spiderman-mask .spidergirl-reveal {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.hero-image-container:hover .spiderman-mask,
+.hero-image-container.active .spiderman-mask {
+    opacity: 1;
 }
 
 .hero-image-container:hover .peter-parker,
 .hero-image-container.active .peter-parker {
-    filter: brightness(0.85);
+    filter: brightness(0.9);
 }
 
 /* Light sweep effect */
