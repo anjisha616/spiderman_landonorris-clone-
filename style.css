@@ -631,8 +631,8 @@ ul {
     height: 100%;
     object-fit: contain;
     object-position: center bottom;
-    /* Anji image at full size */
-    transform: scale(1);
+    /* Scale up anji to match spidergirl size */
+    transform: scale(1.35);
     transform-origin: center bottom;
 }
 
@@ -650,8 +650,8 @@ ul {
     height: 100%;
     object-fit: contain;
     object-position: center bottom;
-    /* Scale down spidergirl to match anji size */
-    transform: scale(0.75);
+    /* Spidergirl at full size */
+    transform: scale(1);
     transform-origin: center bottom;
 }
 
