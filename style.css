@@ -1,17 +1,23 @@
 /* =============================================
-   SPIDER-MAN PREMIUM WEBSITE
-   Cinematic, Dark Luxury Design
+   SPIDER-GWEN / GHOST-SPIDER WEBSITE
+   Into the Spider-Verse Inspired Design
    ============================================= */
 
 /* =============================================
    CSS CUSTOM PROPERTIES (Variables)
    ============================================= */
 :root {
-    /* Primary Colors */
-    --red: #e62429;
-    --red-dark: #b91c1c;
-    --red-light: #ff3d43;
-    --red-glow: rgba(230, 36, 41, 0.5);
+    /* Primary Colors - Spider-Gwen Pink/Magenta */
+    --red: #FF65A3;
+    --red-dark: #E91E8C;
+    --red-light: #FF8EC4;
+    --red-glow: rgba(255, 101, 163, 0.5);
+    
+    /* Accent Colors - Cyan/Teal */
+    --cyan: #00D4FF;
+    --cyan-dark: #00A8CC;
+    --cyan-light: #5CE1FF;
+    --cyan-glow: rgba(0, 212, 255, 0.5);
     
     /* Neutral Colors */
     --black: #0a0a0a;
