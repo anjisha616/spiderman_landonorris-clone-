@@ -349,9 +349,9 @@ ul {
     position: absolute;
     inset: 0;
     background: 
-        radial-gradient(ellipse at 50% 50%, rgba(230, 36, 41, 0.08) 0%, transparent 60%),
-        radial-gradient(ellipse at 20% 80%, rgba(139, 0, 0, 0.1) 0%, transparent 40%),
-        radial-gradient(ellipse at 80% 20%, rgba(139, 0, 0, 0.08) 0%, transparent 40%);
+        radial-gradient(ellipse at 50% 50%, rgba(255, 101, 163, 0.08) 0%, transparent 60%),
+        radial-gradient(ellipse at 20% 80%, rgba(0, 212, 255, 0.1) 0%, transparent 40%),
+        radial-gradient(ellipse at 80% 20%, rgba(255, 101, 163, 0.08) 0%, transparent 40%);
 }
 
 /* Organic curved background lines like Lando's site */
@@ -366,22 +366,22 @@ ul {
 
 .curve {
     fill: none;
-    stroke: rgba(230, 36, 41, 0.15);
+    stroke: rgba(255, 101, 163, 0.15);
     stroke-width: 2;
 }
 
 .curve-1 {
-    stroke: rgba(230, 36, 41, 0.12);
+    stroke: rgba(255, 101, 163, 0.12);
     stroke-width: 3;
 }
 
 .curve-2 {
-    stroke: rgba(255, 255, 255, 0.05);
+    stroke: rgba(0, 212, 255, 0.08);
     stroke-width: 2;
 }
 
 .curve-3 {
-    stroke: rgba(230, 36, 41, 0.08);
+    stroke: rgba(255, 101, 163, 0.08);
     stroke-width: 1.5;
 }
 
@@ -781,7 +781,7 @@ ul {
         linear-gradient(180deg, #1a1008 0%, #2d1f15 100%);
 }
 
-/* Spider-Man Mask - Positioned as helmet overlay */
+/* Spider-Gwen Mask - Positioned as hood overlay */
 .spiderman-mask {
     z-index: 3;
     pointer-events: none;
@@ -798,30 +798,31 @@ ul {
     transition: all 0.6s var(--ease-out);
 }
 
-/* The actual mask shell (like Lando's helmet) */
+/* The actual mask shell - Ghost-Spider white hood */
 .mask-shell {
     width: 100%;
     height: 100%;
     background: linear-gradient(145deg, 
-        var(--red) 0%, 
-        var(--red-dark) 40%,
-        #8b0000 100%);
+        #ffffff 0%, 
+        #f0f0f0 40%,
+        #e8e8e8 100%);
     border-radius: 50% 50% 45% 45% / 55% 55% 45% 45%;
     position: relative;
     overflow: hidden;
     box-shadow: 
-        0 0 60px rgba(230, 36, 41, 0.4),
-        inset 0 -20px 40px rgba(0,0,0,0.3),
-        inset 0 20px 40px rgba(255,255,255,0.1);
+        0 0 60px rgba(255, 101, 163, 0.4),
+        inset 0 -20px 40px rgba(0,0,0,0.1),
+        inset 0 20px 40px rgba(255,255,255,0.3);
 }
 
-/* Mask eyes */
+/* Mask eyes - Ghost-Spider style with pink/cyan glow */
 .mask-shell .mask-eye {
     position: absolute;
-    background: var(--white);
+    background: linear-gradient(135deg, #ffffff 0%, #00D4FF 50%, #FF65A3 100%);
     box-shadow: 
-        0 0 30px rgba(255,255,255,0.8),
-        inset 0 0 20px rgba(0,0,0,0.1);
+        0 0 30px rgba(0, 212, 255, 0.6),
+        0 0 60px rgba(255, 101, 163, 0.4),
+        inset 0 0 20px rgba(255,255,255,0.5);
     border: 3px solid #1a1a1a;
 }
 
@@ -843,17 +844,17 @@ ul {
     transform: rotate(15deg);
 }
 
-/* Web pattern on mask */
+/* Web pattern on mask - Ghost-Spider style inner hood web */
 .web-pattern {
     position: absolute;
     inset: 0;
     background: 
-        /* Radial lines from center */
+        /* Radial lines from center - pink web lines */
         repeating-conic-gradient(from 0deg at 50% 30%, 
             transparent 0deg, 
             transparent 8deg, 
-            rgba(0,0,0,0.15) 8deg, 
-            rgba(0,0,0,0.15) 10deg);
+            rgba(255, 101, 163, 0.2) 8deg, 
+            rgba(255, 101, 163, 0.2) 10deg);
     border-radius: inherit;
 }
 
@@ -861,13 +862,13 @@ ul {
     content: '';
     position: absolute;
     inset: 0;
-    /* Concentric web lines */
+    /* Concentric web lines - pink to match Ghost-Spider */
     background: 
-        radial-gradient(circle at 50% 30%, transparent 20px, rgba(0,0,0,0.1) 21px, transparent 22px),
-        radial-gradient(circle at 50% 30%, transparent 45px, rgba(0,0,0,0.1) 46px, transparent 47px),
-        radial-gradient(circle at 50% 30%, transparent 70px, rgba(0,0,0,0.1) 71px, transparent 72px),
-        radial-gradient(circle at 50% 30%, transparent 95px, rgba(0,0,0,0.1) 96px, transparent 97px),
-        radial-gradient(circle at 50% 30%, transparent 120px, rgba(0,0,0,0.1) 121px, transparent 122px);
+        radial-gradient(circle at 50% 30%, transparent 20px, rgba(255, 101, 163, 0.15) 21px, transparent 22px),
+        radial-gradient(circle at 50% 30%, transparent 45px, rgba(255, 101, 163, 0.15) 46px, transparent 47px),
+        radial-gradient(circle at 50% 30%, transparent 70px, rgba(255, 101, 163, 0.15) 71px, transparent 72px),
+        radial-gradient(circle at 50% 30%, transparent 95px, rgba(255, 101, 163, 0.15) 96px, transparent 97px),
+        radial-gradient(circle at 50% 30%, transparent 120px, rgba(255, 101, 163, 0.15) 121px, transparent 122px);
     border-radius: inherit;
 }
 
@@ -1373,19 +1374,19 @@ section {
 }
 
 .classic-suit {
-    background: linear-gradient(145deg, var(--red) 0%, var(--red-dark) 50%, #1a237e 100%);
+    background: linear-gradient(145deg, #ffffff 0%, #f0f0f0 30%, #FF65A3 60%, #1a1a1a 100%);
 }
 
 .iron-suit {
-    background: linear-gradient(145deg, #ffd700 0%, var(--red) 50%, #8b0000 100%);
+    background: linear-gradient(145deg, #ffffff 0%, #00D4FF 40%, #FF65A3 70%, #1a1a1a 100%);
 }
 
 .stealth-suit {
-    background: linear-gradient(145deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    background: linear-gradient(145deg, #1a1a1a 0%, #2d2d2d 50%, #ffffff 100%);
 }
 
 .symbiote-suit {
-    background: linear-gradient(145deg, #0d0d0d 0%, #1a1a1a 50%, #2d2d2d 100%);
+    background: linear-gradient(145deg, #FF65A3 0%, #00D4FF 50%, #ffffff 100%);
 }
 
 .suit-glow {
