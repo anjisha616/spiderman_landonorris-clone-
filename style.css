@@ -633,7 +633,7 @@ ul {
     object-fit: contain;
     object-position: center 65%;
     /* Scale up anji to match spidergirl size */
-    transform: scale(1.35) translateY(40px);
+    transform: scale(1.35) translateY(60px);
     transform-origin: center bottom;
 }
 
