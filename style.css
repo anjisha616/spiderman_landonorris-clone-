@@ -645,7 +645,7 @@ ul {
     opacity: 1;
     transition: opacity 0.6s var(--ease-out), clip-path 0.05s linear;
     /* Cursor tracking reveal - clip-path for mask effect */
-    clip-path: circle(0% at 50% 50%);
+    clip-path: circle(100% at 50% 50%);
 }
 
 .spiderman-mask .spidergirl-reveal {
@@ -679,11 +679,6 @@ ul {
 
 .hero-image-container.active .peter-parker {
     opacity: 1;
-}
-
-/* Default state - spider girl visible */
-.hero-image-container:not(.is-hovering):not(.active) .spiderman-mask {
-    clip-path: circle(100% at 50% 50%); /* Fully visible when not hovering */
 }
 
 /* Light sweep effect */
