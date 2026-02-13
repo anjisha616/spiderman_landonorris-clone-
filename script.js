@@ -143,6 +143,7 @@ function initHeroAnimations() {
    ============================================= */
 function initMaskReveal() {
     const imageContainer = document.getElementById('heroImageContainer');
+    const spidermanMask = document.getElementById('spidermanMask');
     const peterParker = document.getElementById('peterParker');
     const hoverHint = document.getElementById('hoverHint');
     
@@ -182,7 +183,7 @@ function initMaskReveal() {
         imageContainer.addEventListener('mouseleave', function() {
             isHovering = false;
             this.classList.remove('is-hovering');
-            // Reset mask to hidden
+            // Reset anji to hidden
             if (peterParker) {
                 peterParker.style.clipPath = 'circle(0% at 50% 50%)';
             }
@@ -200,9 +201,8 @@ function initMaskReveal() {
             const xPercent = (x / rect.width) * 100;
             const yPercent = (y / rect.height) * 100;
             
-            // Apply radial gradient mask that follows cursor
-            // Larger radius for more dramatic reveal effect
-            const radius = 35; // Larger reveal area for better effect
+            // Apply radial mask to anji that grows, revealing it over spidergirl
+            const radius = 35; // Size of reveal area
             peterParker.style.clipPath = `circle(${radius}% at ${xPercent}% ${yPercent}%)`;
         });
     }

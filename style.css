@@ -641,11 +641,11 @@ ul {
    SPIDER-GIRL IMAGE STYLING (Initial visible - spidergirl.png)
    =================== */
 .spiderman-mask {
-    z-index: 3;
+    z-index: 1;
     opacity: 1;
     transition: opacity 0.6s var(--ease-out);
-    /* Always fully visible - anji reveals through this */
-    clip-path: circle(100% at 50% 50%);
+    /* Always fully visible - anji clips itself to reveal over this */
+    clip-path: unset;
 }
 
 .spiderman-mask .spidergirl-reveal {
@@ -659,13 +659,13 @@ ul {
 }
 
 /* ===================
-   ANJI IMAGE STYLING (Revealed on hover via circular mask)
+   ANJI IMAGE STYLING (On top - revealed through growing circular mask)
    =================== */
 .peter-parker {
     z-index: 2;
     opacity: 1;
     transition: opacity 0.6s var(--ease-out);
-    /* Starts hidden, revealed by cursor tracking */
+    /* Starts hidden, grows circular mask on hover to reveal */
     clip-path: circle(0% at 50% 50%);
 }
 
@@ -680,11 +680,15 @@ ul {
 }
 
 /* ===================
-   HOVER STATE - Anji reveal via dynamic clip-path
+   HOVER STATE - Anji grows through circular mask
    =================== */
 .hero-image-container.is-hovering .peter-parker {
     opacity: 1;
     /* clip-path is updated dynamically by JS */
+}
+
+.hero-image-container.is-hovering .spiderman-mask {
+    opacity: 1;
 }
 
 /* Mobile: Full opacity toggle */
