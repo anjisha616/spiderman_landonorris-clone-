@@ -202,7 +202,7 @@ function initMaskReveal() {
             const yPercent = (y / rect.height) * 100;
             
             // Apply radial mask to anji that grows, revealing it over spidergirl
-            const radius = 35; // Size of reveal area
+            const radius = 23; // Smaller reveal area (reduced from 35)
             peterParker.style.clipPath = `circle(${radius}% at ${xPercent}% ${yPercent}%)`;
         });
     }
