@@ -143,7 +143,7 @@ function initHeroAnimations() {
    ============================================= */
 function initMaskReveal() {
     const imageContainer = document.getElementById('heroImageContainer');
-    const spidermanMask = document.getElementById('spidermanMask');
+    const peterParker = document.getElementById('peterParker');
     const hoverHint = document.getElementById('hoverHint');
     
     // Check if touch device
@@ -182,15 +182,15 @@ function initMaskReveal() {
         imageContainer.addEventListener('mouseleave', function() {
             isHovering = false;
             this.classList.remove('is-hovering');
-            // Reset mask to fully visible
-            if (spidermanMask) {
-                spidermanMask.style.clipPath = 'circle(100% at 50% 50%)';
+            // Reset mask to hidden
+            if (peterParker) {
+                peterParker.style.clipPath = 'circle(0% at 50% 50%)';
             }
             if (hoverHint) hoverHint.style.opacity = '1';
         });
         
         imageContainer.addEventListener('mousemove', function(e) {
-            if (!isHovering || !spidermanMask) return;
+            if (!isHovering || !peterParker) return;
             
             const rect = this.getBoundingClientRect();
             const x = e.clientX - rect.left;
@@ -203,7 +203,7 @@ function initMaskReveal() {
             // Apply radial gradient mask that follows cursor
             // Larger radius for more dramatic reveal effect
             const radius = 35; // Larger reveal area for better effect
-            spidermanMask.style.clipPath = `circle(${radius}% at ${xPercent}% ${yPercent}%)`;
+            peterParker.style.clipPath = `circle(${radius}% at ${xPercent}% ${yPercent}%)`;
         });
     }
 }
