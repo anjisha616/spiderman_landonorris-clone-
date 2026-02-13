@@ -143,6 +143,7 @@ function initHeroAnimations() {
    ============================================= */
 function initMaskReveal() {
     const imageContainer = document.getElementById('heroImageContainer');
+    const spidermanMask = document.getElementById('spidermanMask');
     const hoverHint = document.getElementById('hoverHint');
     
     // Check if touch device
@@ -169,14 +170,40 @@ function initMaskReveal() {
             hoverHint.querySelector('.hint-text').textContent = 'Tap to reveal';
         }
     } else {
-        // Desktop: Hover effect is handled by CSS
-        // Add glow intensity on hover
+        // Desktop: Cursor-tracking mask reveal (Lando Norris style)
+        let isHovering = false;
+        
         imageContainer.addEventListener('mouseenter', function() {
-            this.style.setProperty('--glow-intensity', '1');
+            isHovering = true;
+            this.classList.add('is-hovering');
+            if (hoverHint) hoverHint.style.opacity = '0';
         });
         
         imageContainer.addEventListener('mouseleave', function() {
-            this.style.setProperty('--glow-intensity', '0.6');
+            isHovering = false;
+            this.classList.remove('is-hovering');
+            // Reset mask position
+            if (spidermanMask) {
+                spidermanMask.style.clipPath = 'circle(0% at 50% 50%)';
+            }
+            if (hoverHint) hoverHint.style.opacity = '1';
+        });
+        
+        imageContainer.addEventListener('mousemove', function(e) {
+            if (!isHovering || !spidermanMask) return;
+            
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            // Calculate percentage position
+            const xPercent = (x / rect.width) * 100;
+            const yPercent = (y / rect.height) * 100;
+            
+            // Apply radial gradient mask that follows cursor
+            // Radius increases for larger reveal area
+            const radius = 25; // Adjust for reveal size
+            spidermanMask.style.clipPath = `circle(${radius}% at ${xPercent}% ${yPercent}%)`;
         });
     }
 }
