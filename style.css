@@ -643,7 +643,7 @@ ul {
 .spiderman-mask {
     z-index: 3;
     opacity: 1;
-    transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
+    transition: opacity 0.6s var(--ease-out), clip-path 0.05s linear;
     /* Cursor tracking reveal - clip-path for mask effect */
     clip-path: circle(0% at 50% 50%);
 }
@@ -690,21 +690,20 @@ ul {
 .light-sweep {
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        120deg,
-        transparent 0%,
-        transparent 40%,
-        rgba(255, 255, 255, 0.1) 50%,
-        transparent 60%,
-        transparent 100%
+    background: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.15) 0%,
+        rgba(255, 255, 255, 0.05) 40%,
+        transparent 70%
     );
-    transform: translateX(-100%);
     z-index: 10;
     pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s var(--ease-out);
 }
 
-.hero-image-container:hover .light-sweep {
-    animation: lightSweep 0.8s var(--ease-out) forwards;
+.hero-image-container.is-hovering .light-sweep {
+    opacity: 1;
 }
 
 @keyframes lightSweep {
