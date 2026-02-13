@@ -182,9 +182,9 @@ function initMaskReveal() {
         imageContainer.addEventListener('mouseleave', function() {
             isHovering = false;
             this.classList.remove('is-hovering');
-            // Reset mask position
+            // Reset mask to fully visible
             if (spidermanMask) {
-                spidermanMask.style.clipPath = 'circle(0% at 50% 50%)';
+                spidermanMask.style.clipPath = 'circle(100% at 50% 50%)';
             }
             if (hoverHint) hoverHint.style.opacity = '1';
         });
@@ -201,8 +201,8 @@ function initMaskReveal() {
             const yPercent = (y / rect.height) * 100;
             
             // Apply radial gradient mask that follows cursor
-            // Radius increases for larger reveal area
-            const radius = 25; // Adjust for reveal size
+            // Larger radius for more dramatic reveal effect
+            const radius = 35; // Larger reveal area for better effect
             spidermanMask.style.clipPath = `circle(${radius}% at ${xPercent}% ${yPercent}%)`;
         });
     }
